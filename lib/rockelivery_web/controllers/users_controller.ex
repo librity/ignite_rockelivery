@@ -6,6 +6,14 @@ defmodule RockeliveryWeb.UsersController do
 
   action_fallback FallbackController
 
+  def show(connection, %{"id" => id}) do
+    with {:ok, %User{} = user} <- Rockelivery.get_user_by_id(id) do
+      connection
+      |> put_status(:ok)
+      |> render("show.json", user: user)
+    end
+  end
+
   def create(connection, params) do
     with {:ok, %User{} = user} <- Rockelivery.create_user(params) do
       connection
@@ -14,11 +22,11 @@ defmodule RockeliveryWeb.UsersController do
     end
   end
 
-  def show(connection, %{"id" => id}) do
-    with {:ok, %User{} = user} <- Rockelivery.get_user_by_id(id) do
+  def delete(connection, %{"id" => id}) do
+    with {:ok, %User{}} <- Rockelivery.delete_user(id) do
       connection
-      |> put_status(:ok)
-      |> render("show.json", user: user)
+      |> put_status(:no_content)
+      |> text("")
     end
   end
 end

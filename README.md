@@ -21,6 +21,16 @@ Built-in:
 
 - `GET` http://localhost:4000/dashboard
 
+`Welcome`
+
+- `GET` http://localhost:4000/api/:id
+
+`Users`
+
+- `GET` http://localhost:4000/api/users/:id
+- `POST` http://localhost:4000/api/users
+- `DELETE` http://localhost:4000/api/users/:id
+
 ## Setup <a name = "setup"></a>
 
 Install `Erlang`, `Elixir` and `Phoenix`.
@@ -85,6 +95,8 @@ $ mix ecto.create
 
 ## Elixir Commands <a name = "elixir_commands"></a>
 
+Create a user:
+
 ```elixir
 > user_params = %{
   name: "Luisito",
@@ -96,7 +108,11 @@ $ mix ecto.create
   password: "password"
 }
 > Rockelivery.Users.Create.call(user_params)
+```
 
+Fetch users:
+
+```elixir
 > Rockelivery.Repo.all(Rockelivery.User)
 > Rockelivery.Repo.get(Rockelivery.User, "8623cdd8-7cad-43cc-953b-c30260a349f4")
 
@@ -111,6 +127,18 @@ $ mix ecto.create
 > Rockelivery.Users.GetV3.by_id("8623cdd8-7cad-43cc-953b-c30260a349f4")
 > Rockelivery.Users.GetV3.by_id("8623cdd8-7cad-43cc-953b-c30260a349f8")
 > Rockelivery.Users.GetV3.by_id("8623cdd8")
+```
+
+Delete a user:
+
+```elixir
+> Rockelivery.Users.Delete.call("8623cdd8-7cad-43cc-953b-c30260a349f4")
+> Rockelivery.Users.GetV3.by_id("8623cdd8-7cad-43cc-953b-c30260a349f8")
+> Rockelivery.Users.GetV3.by_id("8623cdd8")
+```
+
+```elixir
+
 ```
 
 ## Libs <a name = "libs"></a>
