@@ -48,9 +48,6 @@ $ mix credo.gen.config
 # Run linter
 $ mix credo --strict
 
-# Create and migrate database
-$ mix ecto.setup
-
 # Start Phoenix dev server on http://localhost:4000
 $ mix phx.server
 
@@ -59,6 +56,28 @@ $ iex -S mix
 
 # Run tests
 $ mix test
+```
+
+Ecto:
+
+```bash
+# Create and migrate database
+$ mix ecto.setup
+
+# Create a migration
+$ mix ecto.gen.migration create_users_table
+
+# Run pending migrations
+$ mix ecto.migrate
+
+# Drop and migrate databases
+$ mix ecto.reset
+
+# Drop databases
+$ mix ecto.drop
+
+# Create databases
+$ mix ecto.create
 ```
 
 ## Elixir Commands <a name = "elixir_commands"></a>
@@ -72,6 +91,7 @@ $ mix test
 - https://github.com/phoenixframework/phoenix
 - https://github.com/rrrene/credo
 - https://github.com/avdi/dotenv_elixir
+- https://github.com/elixir-plug/plug
 
 ## Docs <a name = "docs"></a>
 
@@ -79,6 +99,7 @@ $ mix test
 - https://hexdocs.pm/phoenix/installation.html#content
 - https://github.com/inotify-tools/inotify-tools/wiki
 - https://hexdocs.pm/phoenix/deployment.html
+- https://hexdocs.pm/plug/readme.html
 
 ## Resources <a name = "resources"></a>
 
