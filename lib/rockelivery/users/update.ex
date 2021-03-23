@@ -20,5 +20,9 @@ defmodule Rockelivery.Users.Update do
     user
     |> User.changeset(params)
     |> Repo.update()
+    |> handle_update()
   end
+
+  defp handle_update({:ok, %User{}} = success), do: success
+  defp handle_update({:error, result}), do: {:error, Error.build(:bad_request, result)}
 end

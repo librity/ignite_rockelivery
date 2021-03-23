@@ -9,9 +9,11 @@ defmodule Rockelivery do
 
   alias Rockelivery.Users.Get, as: GetUser
   alias Rockelivery.Users.Create, as: CreateUser
+  alias Rockelivery.Users.Update, as: UpdateUser
   alias Rockelivery.Users.Delete, as: DeleteUser
 
   defdelegate get_user_by_id(id), to: GetUser, as: :by_id
   defdelegate create_user(params), to: CreateUser, as: :call
+  defdelegate update_user(params), to: UpdateUser, as: :call
   defdelegate delete_user(id), to: DeleteUser, as: :call
 end

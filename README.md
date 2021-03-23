@@ -29,6 +29,7 @@ Built-in:
 
 - `GET` http://localhost:4000/api/users/:id
 - `POST` http://localhost:4000/api/users
+- `PUT` http://localhost:4000/api/users/:id
 - `DELETE` http://localhost:4000/api/users/:id
 
 ## Setup <a name = "setup"></a>
