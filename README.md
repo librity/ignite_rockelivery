@@ -83,7 +83,18 @@ $ mix ecto.create
 ## Elixir Commands <a name = "elixir_commands"></a>
 
 ```elixir
-
+> user_params = %{
+  name: "Luisito",
+  age: 40,
+  email: "luisito@example.com",
+  cpf: "12345678910",
+  address: "paper street 123",
+  cep: "12345678",
+  password: "password"
+}
+> Rockelivery.Users.Create.call(user_params)
+> Rockelivery.Repo.all(Rockelivery.User)
+> Rockelivery.Repo.get(Rockelivery.User, "8623cdd8-7cad-43cc-953b-c30260a349f4")
 ```
 
 ## Libs <a name = "libs"></a>

@@ -9,8 +9,6 @@ defmodule Rockelivery.User do
 
   @required_params [:address, :age, :cep, :cpf, :email, :password, :name]
 
-  @valid_email_reqex ~r/^w+[+.w-]*@([w-]+.)*w+[w-]*.([a-z]{2,4}|d+)$/i
-
   schema "users" do
     field :name, :string
     field :age, :integer
@@ -40,7 +38,7 @@ defmodule Rockelivery.User do
     |> validate_length(:cep, is: 8)
     |> validate_length(:cpf, is: 11)
     |> validate_number(:age, greater_than_or_equal_to: 18)
-    |> validate_format(:email, @valid_email_reqex)
+    |> validate_format(:email, ~r/@/)
     |> unique_constraint([:email])
     |> unique_constraint([:cpf])
   end
