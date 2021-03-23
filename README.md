@@ -66,9 +66,6 @@ $ mix phx.server
 # Start your project as an Interactive Elixir session
 $ iex -S mix
 
-# Run tests
-$ mix test
-
 # List all configured routes
 $ mix phx.routes
 ```
@@ -93,6 +90,16 @@ $ mix ecto.drop
 
 # Create databases
 $ mix ecto.create
+```
+
+Tests
+
+```bash
+# Run tests
+$ mix test
+
+# Run tests w/ coverage report
+$ mix test --cover
 ```
 
 ## Elixir Commands <a name = "elixir_commands"></a>
@@ -162,6 +169,7 @@ Delete a user:
 - https://github.com/elixir-plug/plug
 - https://github.com/riverrun/pbkdf2_elixir
 - https://github.com/elixir-plug/plug
+- https://github.com/parroty/excoveralls
 
 ## Docs <a name = "docs"></a>
 
@@ -180,3 +188,5 @@ Delete a user:
 - https://elixirforum.com/c/phoenix-forum
 - https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
 - https://www.formget.com/regular-expression-for-email/
+- https://github.com/parroty/excoveralls/blob/master/.github/workflows/tests.yml
+- https://github.com/mijailr/actions_sample/blob/master/.github/workflows/elixir.yml
