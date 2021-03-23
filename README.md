@@ -1,4 +1,4 @@
-# Ignite - Rockelivery
+# Rocket Seat Ignite - Rockelivery
 
 ## Table of Contents
 
@@ -13,9 +13,13 @@
 
 ## About <a name = "about"></a>
 
-DESCRIPTION
+A restaurant management backend with Elixir and Phoenix.
 
 ## Endpoints <a name = "endpoints"></a>
+
+Built-in:
+
+- `GET` http://localhost:4000/dashboard
 
 ## Setup <a name = "setup"></a>
 
@@ -65,7 +69,9 @@ $ mix test
 
 ## Libs <a name = "libs"></a>
 
+- https://github.com/phoenixframework/phoenix
 - https://github.com/rrrene/credo
+- https://github.com/avdi/dotenv_elixir
 
 ## Docs <a name = "docs"></a>
 
