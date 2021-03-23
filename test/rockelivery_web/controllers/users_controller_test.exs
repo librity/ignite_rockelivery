@@ -3,8 +3,7 @@ defmodule RockeliveryWeb.UsersControllerTest do
 
   import Rockelivery.Factory
 
-  alias Rockelivery.Users.Create
-  alias Rockelivery.{Error, User}
+  alias Rockelivery.User
 
   describe "create/2" do
     test "responds with a user when params are valid", %{conn: conn} do
@@ -44,6 +43,19 @@ defmodule RockeliveryWeb.UsersControllerTest do
                  "password" => ["can't be blank"]
                }
              } = response
+    end
+  end
+
+  describe "delete/2" do
+    test "deletes the user if it exists", %{conn: conn} do
+      %User{id: id} = insert(:user)
+
+      response =
+        conn
+        |> delete(Routes.users_path(conn, :delete, id))
+        |> response(:no_content)
+
+      assert "" = response
     end
   end
 end
