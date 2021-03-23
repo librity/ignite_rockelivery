@@ -92,6 +92,7 @@ $ mix ecto.create
 - https://github.com/rrrene/credo
 - https://github.com/avdi/dotenv_elixir
 - https://github.com/elixir-plug/plug
+- https://github.com/riverrun/pbkdf2_elixir
 
 ## Docs <a name = "docs"></a>
 
@@ -100,8 +101,12 @@ $ mix ecto.create
 - https://github.com/inotify-tools/inotify-tools/wiki
 - https://hexdocs.pm/phoenix/deployment.html
 - https://hexdocs.pm/plug/readme.html
+- https://hexdocs.pm/ecto/Ecto.Changeset.html
+- https://hexdocs.pm/pbkdf2_elixir/Pbkdf2.html
 
 ## Resources <a name = "resources"></a>
 
 - https://www.tutorialspoint.com/elixir/elixir_lists_and_tuples.htm
 - https://elixirforum.com/c/phoenix-forum
+- https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
+- https://www.formget.com/regular-expression-for-email/
