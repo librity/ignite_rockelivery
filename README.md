@@ -3,10 +3,10 @@
 ## Table of Contents
 
 - [About](#about)
+- [Endpoints](#endpoints)
 - [Setup](#setup)
 - [Bash Commands](#bash_commands)
 - [Elixir Commands](#elixir_commands)
-- [Endpoints](#endpoints)
 - [Libs](#libs)
 - [Docs](#docs)
 - [Resources](#resources)
