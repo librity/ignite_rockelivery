@@ -56,6 +56,9 @@ $ iex -S mix
 
 # Run tests
 $ mix test
+
+# List all configured routes
+$ mix phx.routes
 ```
 
 Ecto:
