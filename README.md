@@ -100,6 +100,9 @@ $ mix test
 
 # Run tests w/ coverage report
 $ mix test --cover
+
+# Generate coverage report w/ excoveralls
+$ mix coveralls
 ```
 
 ## Elixir Commands <a name = "elixir_commands"></a>
