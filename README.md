@@ -179,6 +179,7 @@ Delete a user:
 - https://github.com/riverrun/pbkdf2_elixir
 - https://github.com/elixir-plug/plug
 - https://github.com/parroty/excoveralls
+- https://github.com/thoughtbot/ex_machina
 
 ## Docs <a name = "docs"></a>
 
