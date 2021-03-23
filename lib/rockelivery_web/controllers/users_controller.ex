@@ -6,8 +6,16 @@ defmodule RockeliveryWeb.UsersController do
 
   action_fallback FallbackController
 
-  def show(connection, %{"id" => id}) do
-    with {:ok, %User{} = user} <- Rockelivery.get_user_by_id(id) do
+  def index(connection, _params) do
+    users = Rockelivery.get_users()
+
+    connection
+    |> put_status(:ok)
+    |> render("users.json", users: users)
+  end
+
+  def show(connection, %{"id" => uuid}) do
+    with {:ok, %User{} = user} <- Rockelivery.get_user_by_id(uuid) do
       connection
       |> put_status(:ok)
       |> render("user.json", user: user)
@@ -30,8 +38,8 @@ defmodule RockeliveryWeb.UsersController do
     end
   end
 
-  def delete(connection, %{"id" => id}) do
-    with {:ok, %User{}} <- Rockelivery.delete_user(id) do
+  def delete(connection, %{"id" => uuid}) do
+    with {:ok, %User{}} <- Rockelivery.delete_user(uuid) do
       connection
       |> put_status(:no_content)
       |> text("")

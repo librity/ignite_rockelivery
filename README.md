@@ -23,10 +23,11 @@ Built-in:
 
 `Welcome`
 
-- `GET` http://localhost:4000/api/:id
+- `GET` http://localhost:4000/api/welcome/:test
 
 `Users`
 
+- `GET` http://localhost:4000/api/users
 - `GET` http://localhost:4000/api/users/:id
 - `POST` http://localhost:4000/api/users
 - `PUT` http://localhost:4000/api/users/:id
@@ -160,6 +161,7 @@ Delete a user:
 - https://github.com/avdi/dotenv_elixir
 - https://github.com/elixir-plug/plug
 - https://github.com/riverrun/pbkdf2_elixir
+- https://github.com/elixir-plug/plug
 
 ## Docs <a name = "docs"></a>
 
@@ -170,6 +172,7 @@ Delete a user:
 - https://hexdocs.pm/plug/readme.html
 - https://hexdocs.pm/ecto/Ecto.Changeset.html
 - https://hexdocs.pm/pbkdf2_elixir/Pbkdf2.html
+- https://hexdocs.pm/plug/readme.html
 
 ## Resources <a name = "resources"></a>
 
