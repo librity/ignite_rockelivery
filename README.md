@@ -96,8 +96,21 @@ $ mix ecto.create
   password: "password"
 }
 > Rockelivery.Users.Create.call(user_params)
+
 > Rockelivery.Repo.all(Rockelivery.User)
 > Rockelivery.Repo.get(Rockelivery.User, "8623cdd8-7cad-43cc-953b-c30260a349f4")
+
+> Rockelivery.Users.Get.by_id("8623cdd8-7cad-43cc-953b-c30260a349f4")
+> Rockelivery.Users.Get.by_id("8623cdd8-7cad-43cc-953b-c30260a349f8")
+> Rockelivery.Users.Get.by_id("8623cdd8")
+
+> Rockelivery.Users.GetV2.by_id("8623cdd8-7cad-43cc-953b-c30260a349f4")
+> Rockelivery.Users.GetV2.by_id("8623cdd8-7cad-43cc-953b-c30260a349f8")
+> Rockelivery.Users.GetV2.by_id("8623cdd8")
+
+> Rockelivery.Users.GetV3.by_id("8623cdd8-7cad-43cc-953b-c30260a349f4")
+> Rockelivery.Users.GetV3.by_id("8623cdd8-7cad-43cc-953b-c30260a349f8")
+> Rockelivery.Users.GetV3.by_id("8623cdd8")
 ```
 
 ## Libs <a name = "libs"></a>
