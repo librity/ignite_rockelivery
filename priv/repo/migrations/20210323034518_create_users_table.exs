@@ -9,7 +9,7 @@ defmodule Rockelivery.Repo.Migrations.CreateUsersTable do
       add :cpf, :string
       add :email, :string
       add :password_hash, :string
-      add :string, :string
+      add :name, :string
 
       timestamps()
     end
