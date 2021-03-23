@@ -13,6 +13,11 @@ defmodule Rockelivery.Factory do
     }
   end
 
+  def user_json_factory do
+    build(:user_params)
+    |> stringify_map()
+  end
+
   def bad_user_params_factory do
     %{
       name: "Tyler Durden",
@@ -22,5 +27,14 @@ defmodule Rockelivery.Factory do
       address: "Paper street 123",
       cep: "BAD"
     }
+  end
+
+  def bad_user_json_factory do
+    build(:bad_user_params)
+    |> stringify_map()
+  end
+
+  defp stringify_map(map) do
+    for {key, val} <- map, into: %{}, do: {Atom.to_string(key), val}
   end
 end

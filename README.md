@@ -196,7 +196,8 @@ Delete a user:
 
 - https://www.tutorialspoint.com/elixir/elixir_lists_and_tuples.htm
 - https://elixirforum.com/c/phoenix-forum
-- https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
 - https://www.formget.com/regular-expression-for-email/
 - https://github.com/parroty/excoveralls/blob/master/.github/workflows/tests.yml
 - https://github.com/mijailr/actions_sample/blob/master/.github/workflows/elixir.yml
+- https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
+- https://stackoverflow.com/questions/31990134/how-to-convert-map-keys-from-strings-to-atoms-in-elixir
