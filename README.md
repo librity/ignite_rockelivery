@@ -129,16 +129,27 @@ Fetch users:
 > Rockelivery.Users.GetV3.by_id("8623cdd8")
 ```
 
+Update a user:
+
+```elixir
+> updated_user_params = %{
+  "id" => "9a519870-ff34-40ff-b24d-a0a387c8e73a",
+  "name" => "UPDATEDDDDDD",
+  "age" => 40,
+  "email" => "UPDATEDDDDDD@UPDATEDDDDDD.com",
+  "cpf" => "UPDATEDDDDD",
+  "address" => "UPDATEDDDDDD",
+  "cep" => "UPDATEDD"
+}
+> Rockelivery.Users.Update.call(updated_user_params)
+```
+
 Delete a user:
 
 ```elixir
 > Rockelivery.Users.Delete.call("8623cdd8-7cad-43cc-953b-c30260a349f4")
 > Rockelivery.Users.GetV3.by_id("8623cdd8-7cad-43cc-953b-c30260a349f8")
 > Rockelivery.Users.GetV3.by_id("8623cdd8")
-```
-
-```elixir
-
 ```
 
 ## Libs <a name = "libs"></a>
