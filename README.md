@@ -1,5 +1,9 @@
 # Rocket Seat Ignite - Rockelivery
 
+[![tests](https://github.com/librity/ignite_rockelivery/actions/workflows/tests.yml/badge.svg)](https://github.com/librity/ignite_rockelivery/actions/workflows/tests.yml)
+
+[![build](https://github.com/librity/ignite_rockelivery/actions/workflows/build.yml/badge.svg)](https://github.com/librity/ignite_rockelivery/actions/workflows/build.yml)
+
 ## Table of Contents
 
 - [About](#about)
