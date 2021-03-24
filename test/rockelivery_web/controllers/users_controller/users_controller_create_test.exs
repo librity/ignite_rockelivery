@@ -1,12 +1,10 @@
-defmodule RockeliveryWeb.UsersControllerTest do
+defmodule RockeliveryWeb.UsersControllerCreateTest do
   use RockeliveryWeb.ConnCase, async: true
 
   import Rockelivery.Factory
 
-  alias Rockelivery.User
-
   describe "create/2" do
-    test "responds with a user when params are valid", %{conn: conn} do
+    test "returns a created user if params are valid", %{conn: conn} do
       user_params = build(:user_json)
 
       response =
@@ -26,7 +24,7 @@ defmodule RockeliveryWeb.UsersControllerTest do
              } = response
     end
 
-    test "responds with an error when params aren't valid", %{conn: conn} do
+    test "returns an error if params aren't valid", %{conn: conn} do
       bad_user_params = build(:bad_user_json)
 
       response =
@@ -43,19 +41,6 @@ defmodule RockeliveryWeb.UsersControllerTest do
                  "password" => ["can't be blank"]
                }
              } = response
-    end
-  end
-
-  describe "delete/2" do
-    test "deletes the user if it exists", %{conn: conn} do
-      %User{id: id} = insert(:user)
-
-      response =
-        conn
-        |> delete(Routes.users_path(conn, :delete, id))
-        |> response(:no_content)
-
-      assert "" = response
     end
   end
 end
