@@ -16,7 +16,7 @@
 
 ## About <a name = "about"></a>
 
-A restaurant management backend with Elixir and Phoenix.
+A food delivery backend made with Elixir and Phoenix.
 
 ## Endpoints <a name = "endpoints"></a>
 
