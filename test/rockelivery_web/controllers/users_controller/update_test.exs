@@ -52,5 +52,28 @@ defmodule RockeliveryWeb.UsersController.UpdateTest do
                }
              } = response
     end
+
+    test "returns an error if user doesn't exit", %{conn: conn} do
+      update_params = build(:user_json)
+      madeup_uuid = "82c6075f-46fa-4644-b489-f822480fab67"
+
+      response =
+        conn
+        |> put(Routes.users_path(conn, :update, madeup_uuid, update_params))
+        |> json_response(:not_found)
+
+      assert %{"message" => "User not found"} = response
+    end
+
+    test "returns an error if uuid isn't valid", %{conn: conn} do
+      update_params = build(:user_json)
+
+      response =
+        conn
+        |> put(Routes.users_path(conn, :update, "BAD", update_params))
+        |> json_response(:bad_request)
+
+      assert %{"message" => "Invalid UUID"} = response
+    end
   end
 end
