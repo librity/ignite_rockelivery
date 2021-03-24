@@ -1,4 +1,4 @@
-defmodule RockeliveryWeb.UsersControllerDeleteTest do
+defmodule RockeliveryWeb.UsersController.DeleteTest do
   use RockeliveryWeb.ConnCase, async: true
 
   import Rockelivery.Factory
