@@ -4,7 +4,7 @@ defmodule Rockelivery.Users.GetV3Test do
   import Rockelivery.Factory
 
   alias Rockelivery.Users.GetV3
-  alias Rockelivery.{Error, User}
+  alias Rockelivery.User
 
   describe "by_id/1" do
     test "returns the user if it exists" do
@@ -26,7 +26,7 @@ defmodule Rockelivery.Users.GetV3Test do
               }} = return
     end
 
-    test "return an error when user doesn't exist" do
+    test "return an error if user doesn't exist" do
       madeup_uuid = "82c6075f-46fa-4644-b489-f822480fab67"
 
       return = GetV3.by_id(madeup_uuid)
@@ -34,7 +34,7 @@ defmodule Rockelivery.Users.GetV3Test do
       assert {:error, %{result: "User not found", status: :not_found}} = return
     end
 
-    test "return an error when uuid isn't valid" do
+    test "return an error if uuid isn't valid" do
       bad_uuid = "BAD"
 
       return = GetV3.by_id(bad_uuid)

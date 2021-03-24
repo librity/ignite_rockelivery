@@ -4,7 +4,6 @@ defmodule Rockelivery.Users.GetAllTest do
   import Rockelivery.Factory
 
   alias Rockelivery.Users.GetAll
-  alias Rockelivery.{Error, User}
 
   describe "call/1" do
     test "returns a list with all the users" do

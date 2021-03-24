@@ -7,7 +7,7 @@ defmodule Rockelivery.Users.CreateTest do
   alias Rockelivery.{Error, User}
 
   describe "call/1" do
-    test "return a user when params are valid" do
+    test "return a user if params are valid" do
       user_params = build(:user_params)
 
       return = Create.call(user_params)
@@ -15,7 +15,7 @@ defmodule Rockelivery.Users.CreateTest do
       assert {:ok, %User{id: _id, age: 40, email: "tyler@under.ground"}} = return
     end
 
-    test "return an error when params aren't valid" do
+    test "return an error if params aren't valid" do
       bad_user_params = build(:bad_user_params)
 
       return = Create.call(bad_user_params)

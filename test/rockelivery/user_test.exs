@@ -7,7 +7,7 @@ defmodule Rockelivery.UserTest do
   alias Rockelivery.User
 
   describe "changeset/1" do
-    test "returns a new valid changeset when all params are valid" do
+    test "returns a new valid changeset if all params are valid" do
       user_params = build(:user_params)
 
       return = User.changeset(user_params)
@@ -15,7 +15,7 @@ defmodule Rockelivery.UserTest do
       assert %Changeset{changes: %{name: "Tyler Durden"}, valid?: true} = return
     end
 
-    test "returns an invalid changeset when all params aren't valid" do
+    test "returns an invalid changeset if all params aren't valid" do
       bad_user_params = build(:bad_user_params)
 
       return =
@@ -36,7 +36,7 @@ defmodule Rockelivery.UserTest do
   end
 
   describe "changeset/2" do
-    test "returns a valid changeset when all params are valid" do
+    test "returns a valid changeset if all params are valid" do
       user_params = build(:user_params)
 
       new_user_params = %{name: "UPDATEDDDDDD"}
@@ -49,7 +49,7 @@ defmodule Rockelivery.UserTest do
       assert %Changeset{changes: %{name: "UPDATEDDDDDD"}, valid?: true} = return
     end
 
-    test "returns an invalid changeset when all params aren't valid" do
+    test "returns an invalid changeset if all params aren't valid" do
       user_params = build(:user_params)
 
       bad_user_params = build(:bad_user_params)

@@ -4,7 +4,7 @@ defmodule Rockelivery.Users.DeleteTest do
   import Rockelivery.Factory
 
   alias Rockelivery.Users.Delete
-  alias Rockelivery.{Error, User}
+  alias Rockelivery.User
 
   describe "call/1" do
     test "deletes the user if it exists" do
@@ -26,7 +26,7 @@ defmodule Rockelivery.Users.DeleteTest do
               }} = return
     end
 
-    test "return an error when user doesn't exist" do
+    test "return an error if user doesn't exist" do
       madeup_uuid = "82c6075f-46fa-4644-b489-f822480fab67"
 
       return = Delete.call(madeup_uuid)
