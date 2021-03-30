@@ -7,6 +7,8 @@ defmodule Rockelivery do
   if it comes from the database, an external API or others.
   """
 
+  alias Rockelivery.Items.Create, as: CreateItem
+
   alias Rockelivery.Users.GetAll, as: GetAllUsers
   alias Rockelivery.Users.Get, as: GetUser
   alias Rockelivery.Users.Create, as: CreateUser
@@ -18,4 +20,6 @@ defmodule Rockelivery do
   defdelegate create_user(params), to: CreateUser, as: :call
   defdelegate update_user(params), to: UpdateUser, as: :call
   defdelegate delete_user(id), to: DeleteUser, as: :call
+
+  defdelegate create_item(params), to: CreateItem, as: :call
 end

@@ -194,6 +194,7 @@ Delete a user:
 - https://hexdocs.pm/ecto/Ecto.Changeset.html
 - https://hexdocs.pm/pbkdf2_elixir/Pbkdf2.html
 - https://hexdocs.pm/plug/readme.html
+- https://hexdocs.pm/iex/master/IEx.html#pry/0
 
 ## Resources <a name = "resources"></a>
 
@@ -204,3 +205,4 @@ Delete a user:
 - https://github.com/mijailr/actions_sample/blob/master/.github/workflows/elixir.yml
 - https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
 - https://stackoverflow.com/questions/31990134/how-to-convert-map-keys-from-strings-to-atoms-in-elixir
+- https://medium.com/@diamondgfx/debugging-phoenix-with-iex-pry-5417256e1d11
