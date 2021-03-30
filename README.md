@@ -51,6 +51,9 @@ $ docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postg
 ## Bash Commands <a name = "bash_commands"></a>
 
 ```bash
+# Create phoenix app without webpacker or html views
+$ mix phx.new app_name --no-webpack --no-html
+
 # Intall dependencies
 $ mix deps.get
 
