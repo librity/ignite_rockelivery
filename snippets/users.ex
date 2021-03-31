@@ -9,6 +9,16 @@ user_params = %{
   "password" => "password"
 }
 Rockelivery.Users.Create.call(user_params)
+bad_params = %{
+  "name" => "Luisito",
+  "age" => 15,
+  "email" => "luisito@example.com",
+  "cpf" => "12345678910",
+  "address" => "paper street 123",
+  "cep" => "01001000",
+  "password" => "password"
+}
+Rockelivery.Users.Create.call(bad_params)
 
 # Fetch users
 Rockelivery.Repo.all(Rockelivery.User)
@@ -28,11 +38,11 @@ Rockelivery.Users.GetV3.by_id("8623cdd8")
 
 # Update a user
 updated_user_params = %{
-  "id" => "9a519870-ff34-40ff-b24d-a0a387c8e73a",
+  "id" => "31a377a0-1800-46ea-ab44-b6a571f9de00",
   "name" => "UPDATEDDDDDD",
   "age" => 40,
-  "email" => "UPDATEDDDDDD@UPDATEDDDDDD.com",
-  "cpf" => "UPDATEDDDDD",
+  "email" => "UPDATEDDDDDD@UPDATEDDDDD.com",
+  "cpf" => "UPDATcDDDDD",
   "address" => "UPDATEDDDDDD",
   "cep" => "18108370"
 }

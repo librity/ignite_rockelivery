@@ -216,6 +216,7 @@ ViaCep client:
 - https://hexdocs.pm/phoenix/deployment.html
 - https://hexdocs.pm/plug/readme.html
 - https://hexdocs.pm/ecto/Ecto.Changeset.html
+- https://hexdocs.pm/ecto/Ecto.Schema.html
 - https://hexdocs.pm/pbkdf2_elixir/Pbkdf2.html
 - https://hexdocs.pm/plug/readme.html
 - https://hexdocs.pm/iex/master/IEx.html#pry/0

@@ -10,7 +10,7 @@ defmodule Rockelivery.Factory do
       email: "tyler@under.ground",
       cpf: "12345678910",
       address: "Paper street 123",
-      cep: "12345678",
+      cep: "01001000",
       password: "first_rule"
     }
   end
@@ -39,13 +39,17 @@ defmodule Rockelivery.Factory do
   def user_factory do
     %User{
       id: "e173f324-9d91-43a9-a45a-e6647abf721c",
-      name: "Tyler Durden",
-      age: 40,
-      email: "tyler@under.ground",
-      cpf: "12345678910",
       address: "Paper street 123",
-      cep: "12345678",
-      password: "first_rule"
+      age: 40,
+      cep: "01001000",
+      city: "São Paulo",
+      cpf: "12345678910",
+      name: "Tyler Durden",
+      email: "tyler@under.ground",
+      neighborhood: "Sé",
+      password: "first_rule",
+      state: "SP",
+      street: "Praça da Sé"
     }
   end
 

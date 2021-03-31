@@ -9,20 +9,10 @@ defmodule Rockelivery.User do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
 
-  @required_params [
-    :name,
-    :age,
-    :email,
-    :cpf,
-    :cep,
-    :city,
-    :state,
-    :neighborhood,
-    :street,
-    :address,
-    :password
-  ]
+  @required_params [:name, :age, :email, :cpf, :cep, :address, :password]
   @update_required_params @required_params -- [:password]
+  @optional_params [:city, :state, :neighborhood, :street]
+  @params @required_params ++ @optional_params
 
   @derive {Jason.Encoder, only: [:id, :age, :cpf, :address, :email]}
 
@@ -47,9 +37,21 @@ defmodule Rockelivery.User do
     timestamps()
   end
 
+  def build(params) do
+    params
+    |> changeset()
+    |> apply_action(:create)
+  end
+
+  def build(user, params) do
+    user
+    |> changeset(params)
+    |> apply_action(:create)
+  end
+
   def changeset(params) do
     %__MODULE__{}
-    |> cast(params, @required_params)
+    |> cast(params, @params)
     |> validate_changeset(@required_params)
     |> validate_constraints()
     |> generate_password_hash()
@@ -57,7 +59,7 @@ defmodule Rockelivery.User do
 
   def changeset(user, new_params) do
     user
-    |> cast(new_params, @update_required_params)
+    |> cast(new_params, @params)
     |> validate_changeset(@update_required_params)
     |> validate_constraints()
     |> generate_password_hash()
