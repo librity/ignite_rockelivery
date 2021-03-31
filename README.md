@@ -199,6 +199,8 @@ Delete a user:
 - https://hexdocs.pm/pbkdf2_elixir/Pbkdf2.html
 - https://hexdocs.pm/plug/readme.html
 - https://hexdocs.pm/iex/master/IEx.html#pry/0
+- https://hexdocs.pm/ecto/2.2.11/associations.html#content
+- https://elixirschool.com/en/lessons/ecto/associations/
 
 ## Resources <a name = "resources"></a>
 
