@@ -212,6 +212,7 @@ ViaCep client:
 ## Docs <a name = "docs"></a>
 
 - https://elixir-lang.org/crash-course.html
+- https://elixir-lang.org/getting-started/sigils.html
 - https://hexdocs.pm/phoenix/installation.html#content
 - https://github.com/inotify-tools/inotify-tools/wiki
 - https://hexdocs.pm/phoenix/deployment.html
