@@ -177,6 +177,25 @@ Delete a user:
 > Rockelivery.Users.GetV3.by_id("8623cdd8")
 ```
 
+Tesla HTTP client:
+
+```elixir
+> Tesla.get("https://api.github.com/users/danilo-vieira/repos")
+> Tesla.get("https://viacep.com.br/ws/01001000/json/")
+> Tesla.get("https://viacep.com.br/ws/01001-000/json/")
+> Tesla.get("https://viacep.com.br/ws/00000000/json/")
+> Tesla.get("https://viacep.com.br/ws/123/json/")
+```
+
+ViaCep client:
+
+```elixir
+Rockelivery.ViaCep.Client.get_cep_info("01001000")
+Rockelivery.ViaCep.Client.get_cep_info("01001-000")
+Rockelivery.ViaCep.Client.get_cep_info("00000000")
+Rockelivery.ViaCep.Client.get_cep_info("123")
+```
+
 ## Libs <a name = "libs"></a>
 
 - https://github.com/phoenixframework/phoenix
@@ -187,6 +206,7 @@ Delete a user:
 - https://github.com/elixir-plug/plug
 - https://github.com/parroty/excoveralls
 - https://github.com/thoughtbot/ex_machina
+- https://github.com/teamon/tesla
 
 ## Docs <a name = "docs"></a>
 
@@ -200,7 +220,7 @@ Delete a user:
 - https://hexdocs.pm/plug/readme.html
 - https://hexdocs.pm/iex/master/IEx.html#pry/0
 - https://hexdocs.pm/ecto/2.2.11/associations.html#content
-- https://elixirschool.com/en/lessons/ecto/associations/
+- https://hexdocs.pm/tesla/readme.html
 
 ## Resources <a name = "resources"></a>
 
@@ -212,3 +232,5 @@ Delete a user:
 - https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
 - https://stackoverflow.com/questions/31990134/how-to-convert-map-keys-from-strings-to-atoms-in-elixir
 - https://medium.com/@diamondgfx/debugging-phoenix-with-iex-pry-5417256e1d11
+- https://elixirschool.com/en/lessons/ecto/associations/
+- https://viacep.com.br/
