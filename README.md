@@ -190,10 +190,10 @@ Tesla HTTP client:
 ViaCep client:
 
 ```elixir
-> Rockelivery.ViaCep.Client.get_cep_info("01001000")
-> Rockelivery.ViaCep.Client.get_cep_info("01001-000")
-> Rockelivery.ViaCep.Client.get_cep_info("00000000")
-> Rockelivery.ViaCep.Client.get_cep_info("123")
+> ViaCEP.Client.get_cep_info("01001000")
+> ViaCEP.Client.get_cep_info("01001-000")
+> ViaCEP.Client.get_cep_info("00000000")
+> ViaCEP.Client.get_cep_info("123")
 ```
 
 ## Libs <a name = "libs"></a>
@@ -207,6 +207,7 @@ ViaCep client:
 - https://github.com/parroty/excoveralls
 - https://github.com/thoughtbot/ex_machina
 - https://github.com/teamon/tesla
+- https://github.com/PSPDFKit-labs/bypass
 
 ## Docs <a name = "docs"></a>
 
@@ -222,6 +223,7 @@ ViaCep client:
 - https://hexdocs.pm/iex/master/IEx.html#pry/0
 - https://hexdocs.pm/ecto/2.2.11/associations.html#content
 - https://hexdocs.pm/tesla/readme.html
+- https://hexdocs.pm/bypass/Bypass.html
 
 ## Resources <a name = "resources"></a>
 
@@ -237,3 +239,4 @@ ViaCep client:
 - https://viacep.com.br/
 - https://inquisitivedeveloper.com/lwm-elixir-18/
 - https://www.bestrandoms.com/random-address-in-br
+- https://dashbit.co/blog/mocks-and-explicit-contracts

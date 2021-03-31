@@ -1,5 +1,5 @@
 defmodule Rockelivery.Users.Update do
-  alias Rockelivery.ViaCEP.Client, as: CEPClient
+  alias ViaCEP.Client, as: CEPClient
 
   alias Rockelivery.{Error, User, Repo}
 
