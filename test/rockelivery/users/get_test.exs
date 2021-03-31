@@ -16,7 +16,7 @@ defmodule Rockelivery.Users.GetTest do
               %Rockelivery.User{
                 address: "Paper street 123",
                 age: 40,
-                cep: "12345678",
+                cep: "01001000",
                 cpf: "12345678910",
                 email: "tyler@under.ground",
                 id: "e173f324-9d91-43a9-a45a-e6647abf721c",

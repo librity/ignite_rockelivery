@@ -8,17 +8,17 @@ defmodule Rockelivery.Users.CreateTest do
 
   describe "call/1" do
     test "return a user if params are valid" do
-      user_params = build(:user_params)
+      user_json = build(:user_json)
 
-      return = Create.call(user_params)
+      return = Create.call(user_json)
 
       assert {:ok, %User{id: _id, age: 40, email: "tyler@under.ground"}} = return
     end
 
     test "return an error if params aren't valid" do
-      bad_user_params = build(:bad_user_params)
+      bad_user_json = build(:bad_user_json)
 
-      return = Create.call(bad_user_params)
+      return = Create.call(bad_user_json)
 
       expected_errors = %{
         age: ["must be greater than or equal to 18"],
