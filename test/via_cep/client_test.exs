@@ -2,6 +2,8 @@ defmodule ViaCEP.ClientTest do
   use ExUnit.Case, async: true
 
   alias ViaCEP.Client
+  alias Plug.Conn
+  alias Rockelivery.Error
 
   describe "get_cep_info/1" do
     setup do
@@ -10,7 +12,7 @@ defmodule ViaCEP.ClientTest do
       {:ok, bypass: bypass}
     end
 
-    test "returns CEP info when it is valid", %{bypass: bypass} do
+    test "returns CEP info if CEP is valid", %{bypass: bypass} do
       cep = "01001000"
       body = ~s({
         "cep": "01001-000",
@@ -28,8 +30,8 @@ defmodule ViaCEP.ClientTest do
 
       Bypass.expect(bypass, "GET", "#{cep}/json", fn conn ->
         conn
-        |> Plug.Conn.put_resp_header("content-type", "application/json")
-        |> Plug.Conn.resp(200, body)
+        |> Conn.put_resp_header("content-type", "application/json")
+        |> Conn.resp(200, body)
       end)
 
       response = Client.get_cep_info(url, cep)
@@ -43,6 +45,50 @@ defmodule ViaCEP.ClientTest do
            "street" => "Praça da Sé"
          }}
 
+      assert expected == response
+    end
+
+    test "returns an error if CEP isn't valid", %{bypass: bypass} do
+      cep = "123"
+      url = bypass_url(bypass.port)
+
+      Bypass.expect(bypass, "GET", "#{cep}/json", fn conn ->
+        conn
+        |> Conn.resp(400, "")
+      end)
+
+      response = Client.get_cep_info(url, cep)
+
+      expected = {:error, %Error{result: "Invalid CEP", status: :bad_request}}
+      assert expected == response
+    end
+
+    test "returns an error if CEP doesn't exist", %{bypass: bypass} do
+      cep = "00000000"
+      body = ~s({"erro": true})
+      url = bypass_url(bypass.port)
+
+      Bypass.expect(bypass, "GET", "#{cep}/json", fn conn ->
+        conn
+        |> Conn.put_resp_header("content-type", "application/json")
+        |> Conn.resp(200, body)
+      end)
+
+      response = Client.get_cep_info(url, cep)
+
+      expected = {:error, %Error{result: "CEP not found", status: :not_found}}
+      assert expected == response
+    end
+
+    test "returns an error if server is down", %{bypass: bypass} do
+      cep = "00000000"
+      url = bypass_url(bypass.port)
+
+      Bypass.down(bypass)
+
+      response = Client.get_cep_info(url, cep)
+
+      expected = {:error, %Rockelivery.Error{result: :econnrefused, status: :bad_request}}
       assert expected == response
     end
   end
