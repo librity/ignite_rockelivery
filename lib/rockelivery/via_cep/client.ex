@@ -1,8 +1,9 @@
-defmodule Rockelivery.ViaCep.Client do
+defmodule Rockelivery.ViaCEP.Client do
   use Tesla
 
   alias Tesla.Env, as: Response
   alias Rockelivery.Error
+  alias Rockelivery.ViaCEP.CEPInfo
 
   plug Tesla.Middleware.BaseUrl, "https://viacep.com.br/ws/"
   plug Tesla.Middleware.JSON
@@ -21,5 +22,14 @@ defmodule Rockelivery.ViaCep.Client do
   defp handle_get({:ok, %Response{status: 200, body: %{"erro" => true}}}),
     do: {:error, Error.build_cep_not_found_error()}
 
-  defp handle_get({:ok, %Response{status: 200, body: body}}), do: {:ok, body}
+  defp handle_get({:ok, %Response{status: 200, body: body}}) do
+    %{
+      "uf" => state,
+      "localidade" => city,
+      "bairro" => neighborhood,
+      "logradouro" => street
+    } = body
+
+    {:ok, CEPInfo.build(city, state, neighborhood, street)}
+  end
 end

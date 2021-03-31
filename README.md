@@ -129,7 +129,7 @@ Create a user:
   email: "luisito@example.com",
   cpf: "12345678910",
   address: "paper street 123",
-  cep: "12345678",
+  cep: "01001000",
   password: "password"
 }
 > Rockelivery.Users.Create.call(user_params)
@@ -190,10 +190,10 @@ Tesla HTTP client:
 ViaCep client:
 
 ```elixir
-Rockelivery.ViaCep.Client.get_cep_info("01001000")
-Rockelivery.ViaCep.Client.get_cep_info("01001-000")
-Rockelivery.ViaCep.Client.get_cep_info("00000000")
-Rockelivery.ViaCep.Client.get_cep_info("123")
+> Rockelivery.ViaCep.Client.get_cep_info("01001000")
+> Rockelivery.ViaCep.Client.get_cep_info("01001-000")
+> Rockelivery.ViaCep.Client.get_cep_info("00000000")
+> Rockelivery.ViaCep.Client.get_cep_info("123")
 ```
 
 ## Libs <a name = "libs"></a>
@@ -234,3 +234,5 @@ Rockelivery.ViaCep.Client.get_cep_info("123")
 - https://medium.com/@diamondgfx/debugging-phoenix-with-iex-pry-5417256e1d11
 - https://elixirschool.com/en/lessons/ecto/associations/
 - https://viacep.com.br/
+- https://inquisitivedeveloper.com/lwm-elixir-18/
+- https://www.bestrandoms.com/random-address-in-br

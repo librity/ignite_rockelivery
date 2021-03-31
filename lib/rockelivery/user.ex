@@ -9,7 +9,19 @@ defmodule Rockelivery.User do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
 
-  @required_params [:address, :age, :cep, :cpf, :email, :password, :name]
+  @required_params [
+    :name,
+    :age,
+    :email,
+    :cpf,
+    :cep,
+    :city,
+    :state,
+    :neighborhood,
+    :street,
+    :address,
+    :password
+  ]
   @update_required_params @required_params -- [:password]
 
   @derive {Jason.Encoder, only: [:id, :age, :cpf, :address, :email]}
@@ -20,8 +32,12 @@ defmodule Rockelivery.User do
     field :email, :string
     field :cpf, :string
 
-    field :address, :string
     field :cep, :string
+    field :city, :string
+    field :state, :string
+    field :neighborhood, :string
+    field :street, :string
+    field :address, :string
 
     field :password, :string, virtual: true
     field :password_hash, :string
