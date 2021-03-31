@@ -31,7 +31,7 @@ defmodule Rockelivery.UserTest do
       }
 
       assert %Changeset{valid?: false} = return
-      assert errors_on(return) == expected_errors
+      assert expected_errors == errors_on(return)
     end
   end
 
@@ -67,7 +67,7 @@ defmodule Rockelivery.UserTest do
         |> User.changeset(bad_user_params)
 
       assert %Changeset{valid?: false} = return
-      assert errors_on(return) == expected_errors
+      assert expected_errors == errors_on(return)
     end
   end
 end

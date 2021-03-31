@@ -32,7 +32,7 @@ defmodule Rockelivery.Users.UpdateTest do
       }
 
       assert {:error, %Error{status: :bad_request, result: changeset}} = return
-      assert errors_on(changeset) == expected_errors
+      assert expected_errors == errors_on(changeset)
     end
   end
 end
