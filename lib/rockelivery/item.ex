@@ -7,6 +7,7 @@ defmodule Rockelivery.Item do
   alias Rockelivery.Order
 
   @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
 
   @required_params [:category, :description, :price, :photo]
   @categories [:food, :drink, :desert]

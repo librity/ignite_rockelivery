@@ -7,6 +7,7 @@ defmodule Rockelivery.User do
   alias Rockelivery.Order
 
   @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
 
   @required_params [:address, :age, :cep, :cpf, :email, :password, :name]
   @update_required_params @required_params -- [:password]

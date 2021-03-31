@@ -5,10 +5,11 @@ defmodule Rockelivery.Orders.Create do
 
   def call(params) do
     params
-    |> handle_items()
+    |> fetch_items()
+    |> handle_items(params)
   end
 
-  defp handle_items(%{"items" => items_params}) do
+  defp fetch_items(%{"items" => items_params}) do
     item_ids = Enum.map(items_params, fn item -> item["id"] end)
 
     query = from item in Item, where: item.id in ^item_ids
@@ -31,11 +32,25 @@ defmodule Rockelivery.Orders.Create do
     do: {:error, Error.build_item_not_found_error()}
 
   defp multiply_items(false, items_by_id, items_params) do
-    Enum.reduce(items_params, [], &multiply_item(items_by_id, &1, &2))
+    multiplied_items = Enum.reduce(items_params, [], &multiply_item(items_by_id, &1, &2))
+
+    {:ok, multiplied_items}
   end
 
   defp multiply_item(items_by_id, %{"id" => id, "quantity" => quantity}, accumulator) do
     item = Map.get(items_by_id, id)
     accumulator ++ List.duplicate(item, quantity)
   end
+
+  defp handle_items({:error, _error} = result, _params), do: result
+
+  defp handle_items({:ok, items}, params) do
+    params
+    |> Order.changeset(items)
+    |> Repo.insert()
+    |> handle_insert()
+  end
+
+  defp handle_insert({:error, reason}), do: {:error, Error.build(:bad_request, reason)}
+  defp handle_insert({:ok, %Order{}} = result), do: result
 end
