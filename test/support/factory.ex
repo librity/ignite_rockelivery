@@ -7,7 +7,7 @@ defmodule Rockelivery.Factory do
     %{
       category: :food,
       description: "Bananas",
-      price: Decimal.new("12.50"),
+      price: "12.50",
       photo: "/static/items/bananas.png"
     }
   end
@@ -21,7 +21,7 @@ defmodule Rockelivery.Factory do
     %{
       category: :nunchucks,
       description: "123",
-      price: Decimal.new("0.0"),
+      price: "0.0",
       photo: 123
     }
   end
