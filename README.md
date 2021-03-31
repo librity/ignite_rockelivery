@@ -36,6 +36,10 @@ Built-in:
 - `PUT` http://localhost:4000/api/users/:id
 - `DELETE` http://localhost:4000/api/users/:id
 
+`Items`
+
+- `POST` http://localhost:4000/api/items
+
 ## Setup <a name = "setup"></a>
 
 Install `Erlang`, `Elixir` and `Phoenix`.

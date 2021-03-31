@@ -32,8 +32,11 @@ defmodule RockeliveryWeb.ErrorView do
         # IO.inspect(key, label: "key")
         # IO.inspect(value, label: "value")
 
-        String.replace(acc, "%{#{key}}", to_string(value))
+        String.replace(acc, "%{#{key}}", translate_value(value))
       end)
     end)
   end
+
+  defp translate_value({:parameterized, Ecto.Enum, _map}), do: ""
+  defp translate_value(value), do: to_string(value)
 end
