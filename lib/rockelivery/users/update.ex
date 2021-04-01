@@ -1,12 +1,10 @@
 defmodule Rockelivery.Users.Update do
-  alias ViaCEP.Client, as: CEPClient
-
   alias Rockelivery.{Error, User, Repo}
 
   def call(%{"id" => uuid, "cep" => cep} = params) do
     with {:ok, %User{} = old_user} <- fetch_user(uuid),
          {:ok, %User{}} <- User.build(old_user, params),
-         {:ok, %{} = cep_info} <- CEPClient.get_cep_info(cep),
+         {:ok, %{} = cep_info} <- get_client().get_cep_info(cep),
          {:ok, merged_params} <- merge_cep_info(cep_info, params),
          {:ok, %User{}} = result <- try_to_update(old_user, merged_params) do
       result
@@ -35,5 +33,11 @@ defmodule Rockelivery.Users.Update do
     old_user
     |> User.changeset(params)
     |> Repo.update()
+  end
+
+  defp get_client do
+    :rockelivery
+    |> Application.fetch_env!(__MODULE__)
+    |> Keyword.get(:via_cep_adapter)
   end
 end

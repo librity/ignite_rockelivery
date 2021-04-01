@@ -1,11 +1,9 @@
 defmodule Rockelivery.Users.Create do
-  alias ViaCEP.Client, as: CEPClient
-
   alias Rockelivery.{Error, User, Repo}
 
   def call(%{"cep" => cep} = params) do
     with {:ok, %User{}} <- User.build(params),
-         {:ok, %{} = cep_info} <- CEPClient.get_cep_info(cep),
+         {:ok, %{} = cep_info} <- get_client().get_cep_info(cep),
          {:ok, merged_params} <- merge_cep_info(cep_info, params),
          {:ok, %User{}} = result <- insert_user(merged_params) do
       result
@@ -27,5 +25,11 @@ defmodule Rockelivery.Users.Create do
     params
     |> User.changeset()
     |> Repo.insert()
+  end
+
+  defp get_client do
+    :rockelivery
+    |> Application.fetch_env!(__MODULE__)
+    |> Keyword.get(:via_cep_adapter)
   end
 end
