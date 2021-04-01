@@ -13,15 +13,7 @@ defmodule Rockelivery.Users.CreateTest do
     test "return a user if params are valid" do
       user_json = build(:user_json)
 
-      expect(ClientMock, :get_cep_info, fn _cep ->
-        {:ok,
-         %{
-           "city" => "New York",
-           "neighborhood" => "Bed–Stuy",
-           "state" => "NY",
-           "street" => "Paper Street 123"
-         }}
-      end)
+      expect(ClientMock, :get_cep_info, fn _cep -> {:ok, build(:cep_info)} end)
 
       return = Create.call(user_json)
 

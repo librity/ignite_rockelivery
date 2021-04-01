@@ -1,8 +1,10 @@
 defmodule RockeliveryWeb.UsersController.UpdateTest do
   use RockeliveryWeb.ConnCase, async: true
 
+  import Mox
   import Rockelivery.Factory
 
+  alias ViaCEP.ClientMock
   alias Rockelivery.User
 
   describe "update/2" do
@@ -16,6 +18,8 @@ defmodule RockeliveryWeb.UsersController.UpdateTest do
           "cpf" => "UPDATEDDDDD",
           "email" => "UPDATEDDDDD@UPDATEDDDDD.UPDATEDDDDD"
         })
+
+      expect(ClientMock, :get_cep_info, fn _cep -> {:ok, build(:cep_info)} end)
 
       response =
         conn
