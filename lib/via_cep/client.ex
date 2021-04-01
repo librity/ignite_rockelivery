@@ -4,6 +4,9 @@ defmodule ViaCEP.Client do
   alias Tesla.Env, as: Response
   alias Rockelivery.Error
   alias ViaCEP.CEPInfo
+  alias ViaCEP.Behaviour
+
+  @behaviour Behaviour
 
   @base_url "https://viacep.com.br/ws"
 

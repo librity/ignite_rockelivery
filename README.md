@@ -208,11 +208,13 @@ ViaCep client:
 - https://github.com/thoughtbot/ex_machina
 - https://github.com/teamon/tesla
 - https://github.com/PSPDFKit-labs/bypass
+- https://github.com/dashbitco/mox
 
 ## Docs <a name = "docs"></a>
 
 - https://elixir-lang.org/crash-course.html
 - https://elixir-lang.org/getting-started/sigils.html
+- https://hexdocs.pm/elixir/master/typespecs.html
 - https://hexdocs.pm/phoenix/installation.html#content
 - https://github.com/inotify-tools/inotify-tools/wiki
 - https://hexdocs.pm/phoenix/deployment.html
@@ -225,6 +227,7 @@ ViaCep client:
 - https://hexdocs.pm/ecto/2.2.11/associations.html#content
 - https://hexdocs.pm/tesla/readme.html
 - https://hexdocs.pm/bypass/Bypass.html
+- https://hexdocs.pm/mox/Mox.html
 
 ## Resources <a name = "resources"></a>
 
@@ -241,3 +244,5 @@ ViaCep client:
 - https://inquisitivedeveloper.com/lwm-elixir-18/
 - https://www.bestrandoms.com/random-address-in-br
 - https://dashbit.co/blog/mocks-and-explicit-contracts
+- https://cloudless.studio/model-callbacks-in-phoenix-ecto-and-rails
+- https://stackoverflow.com/questions/16506351/why-use-a-callback-instead-of-a-normal-function-call
