@@ -209,6 +209,7 @@ ViaCep client:
 - https://github.com/teamon/tesla
 - https://github.com/PSPDFKit-labs/bypass
 - https://github.com/dashbitco/mox
+- https://github.com/ueberauth/guardian
 
 ## Docs <a name = "docs"></a>
 
@@ -246,3 +247,4 @@ ViaCep client:
 - https://dashbit.co/blog/mocks-and-explicit-contracts
 - https://cloudless.studio/model-callbacks-in-phoenix-ecto-and-rails
 - https://stackoverflow.com/questions/16506351/why-use-a-callback-instead-of-a-normal-function-call
+- https://jwt.io/
