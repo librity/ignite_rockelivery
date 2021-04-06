@@ -1,6 +1,4 @@
 defmodule Rockelivery.Factories.Order do
-  alias Rockelivery.Factories.Utils
-
   alias Rockelivery.Order
 
   defmacro __using__(_opts) do
