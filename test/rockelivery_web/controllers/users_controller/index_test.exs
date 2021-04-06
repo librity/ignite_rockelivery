@@ -2,11 +2,19 @@ defmodule RockeliveryWeb.UsersController.IndexTest do
   use RockeliveryWeb.ConnCase, async: true
 
   import Rockelivery.Factory
+  alias RockeliveryWeb.Auth.Guardian
 
   describe "index/2" do
-    test "returns a list of all user", %{conn: conn} do
-      insert(:user)
+    setup %{conn: conn} do
+      user = insert(:user)
+      {:ok, token, _claims} = Guardian.encode_and_sign(user)
 
+      conn = put_req_header(conn, "authorization", "Bearer #{token}")
+
+      {:ok, conn: conn, user: user}
+    end
+
+    test "returns a list of all user", %{conn: conn} do
       response =
         conn
         |> get(Routes.users_path(conn, :index, %{}))

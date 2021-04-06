@@ -6,10 +6,20 @@ defmodule RockeliveryWeb.UsersController.UpdateTest do
 
   alias ViaCEP.ClientMock
   alias Rockelivery.User
+  alias RockeliveryWeb.Auth.Guardian
 
   describe "update/2" do
-    test "returns the updated user if params are valid", %{conn: conn} do
-      %User{id: id} = insert(:user)
+    setup %{conn: conn} do
+      user = insert(:user)
+      {:ok, token, _claims} = Guardian.encode_and_sign(user)
+
+      conn = put_req_header(conn, "authorization", "Bearer #{token}")
+
+      {:ok, conn: conn, user: user}
+    end
+
+    test "returns the updated user if params are valid", %{conn: conn, user: user} do
+      %User{id: id} = user
 
       update_params =
         build(:user_json, %{
@@ -37,8 +47,8 @@ defmodule RockeliveryWeb.UsersController.UpdateTest do
              } = response
     end
 
-    test "returns an error if params aren't valid", %{conn: conn} do
-      %User{id: id} = insert(:user)
+    test "returns an error if params aren't valid", %{conn: conn, user: user} do
+      %User{id: id} = user
 
       bad_params = build(:bad_user_json)
 
