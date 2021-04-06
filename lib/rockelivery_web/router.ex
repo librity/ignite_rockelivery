@@ -14,6 +14,8 @@ defmodule RockeliveryWeb.Router do
     get "/welcome/:test", WelcomeController, :index
 
     resources "/users", UsersController, only: [:index, :show, :create, :update, :delete]
+    post "/users/sign_in", UsersController, :sign_in
+
     resources "/items", ItemsController, only: [:create]
     resources "/orders", OrdersController, only: [:create]
   end
