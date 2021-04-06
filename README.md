@@ -78,6 +78,9 @@ $ iex -S mix
 
 # List all configured routes
 $ mix phx.routes
+
+# Generate JWT secret
+$ mix guardian.gen.secret
 ```
 
 Ecto:

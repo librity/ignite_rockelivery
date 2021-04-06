@@ -7,7 +7,7 @@ defmodule RockeliveryWeb.UsersView do
 
   def render("user.json", %{user: %User{} = user}), do: %{user: user}
 
-  def render("create.json", %{user: %User{} = user}) do
-    %{message: "User created successfully", user: user}
+  def render("create.json", %{user: %User{} = user, token: token}) do
+    %{message: "User created successfully", user: user, token: token}
   end
 end

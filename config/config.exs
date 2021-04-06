@@ -19,6 +19,10 @@ config :rockelivery, Rockelivery.Repo,
 config :rockelivery, Rockelivery.Users.Create, via_cep_adapter: ViaCEP.Client
 config :rockelivery, Rockelivery.Users.Update, via_cep_adapter: ViaCEP.Client
 
+config :rockelivery, RockeliveryWeb.Auth.Guardian,
+  issuer: "rockelivery",
+  secret_key: "UC6kkjcR3xoz++l+jm6Wdv9F+HzvflRQmTe644z6jdSr0UfA2LVOD5JvCOuwPUT6"
+
 # Configures the endpoint
 config :rockelivery, RockeliveryWeb.Endpoint,
   url: [host: "localhost"],
