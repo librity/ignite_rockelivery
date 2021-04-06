@@ -4,10 +4,20 @@ defmodule RockeliveryWeb.UsersController.DeleteTest do
   import Rockelivery.Factory
 
   alias Rockelivery.User
+  alias RockeliveryWeb.Auth.Guardian
 
   describe "delete/2" do
-    test "deletes the user if it exists", %{conn: conn} do
-      %User{id: id} = insert(:user)
+    setup %{conn: conn} do
+      user = insert(:user)
+      {:ok, token, _claims} = Guardian.encode_and_sign(user)
+
+      conn = put_req_header(conn, "authorization", "Bearer #{token}")
+
+      {:ok, conn: conn, user: user}
+    end
+
+    test "deletes the user if it exists", %{conn: conn, user: user} do
+      %User{id: id} = user
 
       response =
         conn

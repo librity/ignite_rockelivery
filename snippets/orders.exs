@@ -53,3 +53,6 @@ bad_params = %{
 	"payment_method" => "bad"
 }
 Rockelivery.Orders.Create.call(bad_params)
+
+# Get orders:
+Rockelivery.Repo.all(Rockelivery.Order)

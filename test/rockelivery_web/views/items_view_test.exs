@@ -4,6 +4,7 @@ defmodule RockeliveryWeb.ItemsViewTest do
   import Phoenix.View
   import Rockelivery.Factory
 
+  alias Rockelivery.Item
   alias RockeliveryWeb.ItemsView
 
   test "renders create.json" do
@@ -13,11 +14,15 @@ defmodule RockeliveryWeb.ItemsViewTest do
 
     assert %{
              message: "Item created successfully",
-             item: %Rockelivery.Item{
+             item: %Item{
                category: :food,
                description: "Bananas",
-               photo: "/static/items/bananas.png"
+               id: nil,
+               inserted_at: nil,
+               photo: "/static/items/bananas.png",
+               price: Decimal.new("12.50"),
+               updated_at: nil
              }
-           } = return
+           } == return
   end
 end
