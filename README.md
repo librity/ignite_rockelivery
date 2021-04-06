@@ -180,6 +180,27 @@ Delete a user:
 > Rockelivery.Users.GetV3.by_id("8623cdd8")
 ```
 
+Verify password:
+
+```elixir
+> {:ok, %{password_hash: hash}} = Rockelivery.Users.Get.by_id("a2a60a12-1c03-4357-b370-c78ed28a9e38")
+> Pbkdf2.verify_pass("password", hash)
+true
+> Pbkdf2.verify_pass("badddddd", hash)
+false
+
+> params = %{
+	"id" => "a2a60a12-1c03-4357-b370-c78ed28a9e38",
+	"password" => "password"
+}
+> RockeliveryWeb.Auth.Guardian.authenticate(params)
+> bad_params = %{
+	"id" => "a2a60a12-1c03-4357-b370-c78ed28a9e38",
+	"password" => "badddddd"
+}
+> RockeliveryWeb.Auth.Guardian.authenticate(bad_params)
+```
+
 Tesla HTTP client:
 
 ```elixir

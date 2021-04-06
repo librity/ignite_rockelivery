@@ -22,17 +22,17 @@ Rockelivery.Users.Create.call(bad_params)
 
 # Fetch users
 Rockelivery.Repo.all(Rockelivery.User)
-Rockelivery.Repo.get(Rockelivery.User, "8623cdd8-7cad-43cc-953b-c30260a349f4")
+Rockelivery.Repo.get(Rockelivery.User, "a2a60a12-1c03-4357-b370-c78ed28a9e38")
 
-Rockelivery.Users.Get.by_id("8623cdd8-7cad-43cc-953b-c30260a349f4")
+Rockelivery.Users.Get.by_id("a2a60a12-1c03-4357-b370-c78ed28a9e38")
 Rockelivery.Users.Get.by_id("8623cdd8-7cad-43cc-953b-c30260a349f8")
 Rockelivery.Users.Get.by_id("8623cdd8")
 
-Rockelivery.Users.GetV2.by_id("8623cdd8-7cad-43cc-953b-c30260a349f4")
+Rockelivery.Users.GetV2.by_id("a2a60a12-1c03-4357-b370-c78ed28a9e38")
 Rockelivery.Users.GetV2.by_id("8623cdd8-7cad-43cc-953b-c30260a349f8")
 Rockelivery.Users.GetV2.by_id("8623cdd8")
 
-Rockelivery.Users.GetV3.by_id("8623cdd8-7cad-43cc-953b-c30260a349f4")
+Rockelivery.Users.GetV3.by_id("a2a60a12-1c03-4357-b370-c78ed28a9e38")
 Rockelivery.Users.GetV3.by_id("8623cdd8-7cad-43cc-953b-c30260a349f8")
 Rockelivery.Users.GetV3.by_id("8623cdd8")
 
@@ -49,6 +49,21 @@ updated_user_params = %{
 Rockelivery.Users.Update.call(updated_user_params)
 
 # Delete a user
-Rockelivery.Users.Delete.call("8623cdd8-7cad-43cc-953b-c30260a349f4")
+Rockelivery.Users.Delete.call("a2a60a12-1c03-4357-b370-c78ed28a9e38")
 Rockelivery.Users.GetV3.by_id("8623cdd8-7cad-43cc-953b-c30260a349f8")
 Rockelivery.Users.GetV3.by_id("8623cdd8")
+
+# Verify password:
+{:ok, %{password_hash: hash}} = Rockelivery.Users.Get.by_id("a2a60a12-1c03-4357-b370-c78ed28a9e38")
+Pbkdf2.verify_pass("password", hash)
+Pbkdf2.verify_pass("badddddd", hash)
+params = %{
+	"id" => "a2a60a12-1c03-4357-b370-c78ed28a9e38",
+	"password" => "password"
+}
+RockeliveryWeb.Auth.Guardian.authenticate(params)
+bad_params = %{
+	"id" => "a2a60a12-1c03-4357-b370-c78ed28a9e38",
+	"password" => "badddddd"
+}
+RockeliveryWeb.Auth.Guardian.authenticate(bad_params)
