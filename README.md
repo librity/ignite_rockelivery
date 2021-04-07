@@ -246,6 +246,7 @@ ViaCep client:
 - https://hexdocs.pm/plug/readme.html
 - https://hexdocs.pm/ecto/Ecto.Changeset.html
 - https://hexdocs.pm/ecto/Ecto.Schema.html
+- https://hexdocs.pm/ecto/Ecto.Repo.html#c:stream/2
 - https://hexdocs.pm/pbkdf2_elixir/Pbkdf2.html
 - https://hexdocs.pm/plug/readme.html
 - https://hexdocs.pm/iex/master/IEx.html#pry/0
