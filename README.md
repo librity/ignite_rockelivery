@@ -226,6 +226,16 @@ ViaCep client:
 > ViaCEP.Client.get_cep_info("123")
 ```
 
+Stack server:
+
+```elixir
+> {:ok, pid} = Rockelivery.Stack.start_link()
+> Rockelivery.Stack.push(pid, :world)
+> Rockelivery.Stack.push_async(pid, :world)
+> Rockelivery.Stack.pop(pid)
+> Rockelivery.Stack.pop_async(pid)
+```
+
 Enum:
 
 ```elixir
