@@ -264,6 +264,7 @@ Enum:
 - https://elixir-lang.org/getting-started/mix-otp/genserver.html
 - https://hexdocs.pm/elixir/master/typespecs.html
 - https://hexdocs.pm/elixir/master/GenServer.html
+- https://hexdocs.pm/elixir/master/Supervisor.html
 - https://hexdocs.pm/phoenix/installation.html#content
 - https://github.com/inotify-tools/inotify-tools/wiki
 - https://hexdocs.pm/phoenix/deployment.html
