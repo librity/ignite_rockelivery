@@ -201,6 +201,12 @@ false
 > RockeliveryWeb.Auth.Guardian.authenticate(bad_params)
 ```
 
+Orders report:
+
+```elixir
+> Rockelivery.Orders.Report.create()
+```
+
 Tesla HTTP client:
 
 ```elixir
@@ -218,6 +224,12 @@ ViaCep client:
 > ViaCEP.Client.get_cep_info("01001-000")
 > ViaCEP.Client.get_cep_info("00000000")
 > ViaCEP.Client.get_cep_info("123")
+```
+
+Enum:
+
+```elixir
+> Enum.chunk_every([1, 2, 3, 4, 5, 6, 7, 8], 3) |> Enum.flat_map(fn [_head | tails] -> tails end)
 ```
 
 ## Libs <a name = "libs"></a>
@@ -239,7 +251,9 @@ ViaCep client:
 
 - https://elixir-lang.org/crash-course.html
 - https://elixir-lang.org/getting-started/sigils.html
+- https://elixir-lang.org/getting-started/mix-otp/genserver.html
 - https://hexdocs.pm/elixir/master/typespecs.html
+- https://hexdocs.pm/elixir/master/GenServer.html
 - https://hexdocs.pm/phoenix/installation.html#content
 - https://github.com/inotify-tools/inotify-tools/wiki
 - https://hexdocs.pm/phoenix/deployment.html

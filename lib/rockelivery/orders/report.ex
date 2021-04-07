@@ -7,7 +7,7 @@ defmodule Rockelivery.Orders.Report do
   @batch_size 500
 
   def create(filename \\ "report") do
-    {:ok, report} = Repo.transaction(&generate_report/0)
+    {:ok, report} = Repo.transaction(&generate_report/0, timeout: :infinity)
 
     "reports/#{filename}.csv"
     |> File.write(report)
