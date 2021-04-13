@@ -1,6 +1,7 @@
 # Rocket Seat Ignite - Rockelivery
 
 [![Elixir CI](https://github.com/librity/ignite_rockelivery/actions/workflows/elixir_ci.yml/badge.svg)](https://github.com/librity/ignite_rockelivery/actions/workflows/elixir_ci.yml)
+[![codecov](https://codecov.io/gh/librity/ignite_rockelivery/branch/main/graph/badge.svg)](https://codecov.io/gh/librity/ignite_rockelivery)
 
 ## Table of Contents
 
@@ -104,7 +105,7 @@ $ mix ecto.drop
 $ mix ecto.create
 ```
 
-Tests
+Tests:
 
 ```bash
 # Run tests
@@ -118,6 +119,25 @@ $ mix coveralls
 
 # Generate and save coverage report as html
 $ mix coveralls.html
+```
+
+Local release:
+
+```bash
+export SECRET_KEY_BASE="$(mix phx.gen.secret)"
+export DATABASE_URL="postgresql://postgres:postgres@localhost:5432/rockelivery_dev"
+MIX_ENV=prod mix release
+MIX_ENV=prod APP_NAME=rockelivery PORT=4000 _build/prod/rel/rockelivery/bin/rockelivery start
+```
+
+Gigalixir deploy:
+
+```bash
+APP_NAME=$(gigalixir create --name rockelivery)
+gigalixir apps
+git remote -v
+echo "elixir_version=1.11.2" > elixir_buildpack.config
+echo "erlang_version=23.2" >> elixir_buildpack.config
 ```
 
 ## Elixir Commands <a name = "elixir_commands"></a>
@@ -291,6 +311,12 @@ Enum:
 - https://docs.github.com/en/actions/learn-github-actions
 - https://docs.github.com/en/actions
 - https://docs.codecov.io/docs
+
+### Deploy
+
+- https://gigalixir.readthedocs.io/en/latest/
+- https://hexdocs.pm/mix/master/Mix.Tasks.Release.html
+- https://elixir-lang.org/getting-started/mix-otp/config-and-releases.html#releases
 
 ## Resources <a name = "resources"></a>
 
