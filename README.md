@@ -1,5 +1,7 @@
 # Rocket Seat Ignite - Rockelivery
 
+[![Elixir CI](https://github.com/librity/ignite_rockelivery/actions/workflows/elixir_ci.yml/badge.svg)](https://github.com/librity/ignite_rockelivery/actions/workflows/elixir_ci.yml)
+
 ## Table of Contents
 
 - [About](#about)
