@@ -3,6 +3,8 @@
 [![Elixir CI](https://github.com/librity/ignite_rockelivery/actions/workflows/elixir_ci.yml/badge.svg)](https://github.com/librity/ignite_rockelivery/actions/workflows/elixir_ci.yml)
 [![codecov](https://codecov.io/gh/librity/ignite_rockelivery/branch/main/graph/badge.svg)](https://codecov.io/gh/librity/ignite_rockelivery)
 
+- Production: https://rockelivery.gigalixirapp.com/
+
 ## Table of Contents
 
 - [About](#about)
@@ -105,7 +107,7 @@ $ mix ecto.drop
 $ mix ecto.create
 ```
 
-Tests:
+### Tests
 
 ```bash
 # Run tests
@@ -121,7 +123,7 @@ $ mix coveralls
 $ mix coveralls.html
 ```
 
-Local release:
+### Local release
 
 ```bash
 export SECRET_KEY_BASE="$(mix phx.gen.secret)"
@@ -130,7 +132,7 @@ MIX_ENV=prod mix release
 MIX_ENV=prod APP_NAME=rockelivery PORT=4000 _build/prod/rel/rockelivery/bin/rockelivery start
 ```
 
-Gigalixir deploy:
+### Gigalixir deploy
 
 ```bash
 APP_NAME=$(gigalixir create --name rockelivery)
@@ -138,9 +140,24 @@ gigalixir apps
 git remote -v
 echo "elixir_version=1.11.2" > elixir_buildpack.config
 echo "erlang_version=23.2" >> elixir_buildpack.config
+gigalixir pg:create --free
+gigalixir pg
+gigalixir config
+
+# Deploy
+git push gigalixir
+gigalixir ps
+gigalixir open
+gigalixir logs -a rockelivery
+
+# Database
+gigalixir account:ssh_keys:add "$(cat ~/.ssh/id_rsa.pub)"
+gigalixir ps:migrate
 ```
 
 ## Elixir Commands <a name = "elixir_commands"></a>
+
+### Users
 
 Create a user:
 
@@ -314,9 +331,12 @@ Enum:
 
 ### Deploy
 
-- https://gigalixir.readthedocs.io/en/latest/
 - https://hexdocs.pm/mix/master/Mix.Tasks.Release.html
 - https://elixir-lang.org/getting-started/mix-otp/config-and-releases.html#releases
+- https://gigalixir.readthedocs.io/en/latest/getting-started-guide.html
+- https://gigalixir.readthedocs.io/en/latest/modify-app/releases.html#modifying-existing-app-with-elixir-releases
+- https://gigalixir.readthedocs.io/en/latest/tiers-pricing.html
+- https://gigalixir.readthedocs.io/en/latest/deploy.html?highlight=staging#how-to-set-up-a-staging-environment
 
 ## Resources <a name = "resources"></a>
 
