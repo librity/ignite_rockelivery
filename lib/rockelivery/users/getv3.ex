@@ -1,6 +1,6 @@
 defmodule Rockelivery.Users.GetV3 do
   alias Ecto.UUID
-  alias Rockelivery.{User, Repo}
+  alias Rockelivery.{Repo, User}
 
   def by_id(id) do
     id

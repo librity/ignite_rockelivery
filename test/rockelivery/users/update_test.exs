@@ -4,9 +4,9 @@ defmodule Rockelivery.Users.UpdateTest do
   import Mox
   import Rockelivery.Factory
 
-  alias ViaCEP.ClientMock
-  alias Rockelivery.Users.Update
   alias Rockelivery.{Error, User}
+  alias Rockelivery.Users.Update
+  alias ViaCEP.ClientMock
 
   describe "call/1" do
     test "return the updated user if params are valid" do

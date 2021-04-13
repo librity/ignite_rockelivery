@@ -7,11 +7,11 @@ defmodule Rockelivery do
   if it comes from the database, an external API or others.
   """
 
-  alias Rockelivery.Users.GetAll, as: GetAllUsers
-  alias Rockelivery.Users.Get, as: GetUser
   alias Rockelivery.Users.Create, as: CreateUser
-  alias Rockelivery.Users.Update, as: UpdateUser
   alias Rockelivery.Users.Delete, as: DeleteUser
+  alias Rockelivery.Users.Get, as: GetUser
+  alias Rockelivery.Users.GetAll, as: GetAllUsers
+  alias Rockelivery.Users.Update, as: UpdateUser
 
   alias Rockelivery.Items.Create, as: CreateItem
 

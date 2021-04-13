@@ -1,5 +1,5 @@
 defmodule Rockelivery.Users.Update do
-  alias Rockelivery.{Error, User, Repo}
+  alias Rockelivery.{Error, Repo, User}
 
   def call(%{"id" => uuid, "cep" => cep} = params) do
     with {:ok, %User{} = old_user} <- fetch_user(uuid),

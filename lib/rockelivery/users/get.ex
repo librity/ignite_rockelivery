@@ -1,5 +1,5 @@
 defmodule Rockelivery.Users.Get do
-  alias Rockelivery.{Error, User, Repo}
+  alias Rockelivery.{Error, Repo, User}
 
   def by_id(uuid) do
     case Repo.get(User, uuid) do

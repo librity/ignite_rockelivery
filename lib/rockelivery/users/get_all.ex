@@ -1,5 +1,5 @@
 defmodule Rockelivery.Users.GetAll do
-  alias Rockelivery.{User, Repo}
+  alias Rockelivery.{Repo, User}
 
   def call, do: Repo.all(User)
 end

@@ -3,8 +3,8 @@ defmodule Rockelivery.Users.DeleteTest do
 
   import Rockelivery.Factory
 
-  alias Rockelivery.Users.Delete
   alias Rockelivery.User
+  alias Rockelivery.Users.Delete
 
   describe "call/1" do
     test "deletes the user if it exists" do

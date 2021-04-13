@@ -1,7 +1,7 @@
 defmodule Rockelivery.Orders.Report do
   import Ecto.Query
 
-  alias Rockelivery.{Repo, Order, Item}
+  alias Rockelivery.{Item, Order, Repo}
   alias Rockelivery.Orders.Total
 
   @batch_size 500
@@ -13,7 +13,7 @@ defmodule Rockelivery.Orders.Report do
     |> File.write(report)
   end
 
-  defp generate_report() do
+  defp generate_report do
     query = from order in Order, order_by: order.user_id
 
     query

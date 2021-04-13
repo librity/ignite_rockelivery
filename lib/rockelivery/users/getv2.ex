@@ -1,6 +1,6 @@
 defmodule Rockelivery.Users.GetV2 do
   alias Ecto.UUID
-  alias Rockelivery.{User, Repo}
+  alias Rockelivery.{Repo, User}
 
   def by_id(id) do
     with {:ok, uuid} <- UUID.cast(id),

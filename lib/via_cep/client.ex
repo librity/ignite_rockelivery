@@ -1,10 +1,9 @@
 defmodule ViaCEP.Client do
   use Tesla
 
-  alias Tesla.Env, as: Response
   alias Rockelivery.Error
-  alias ViaCEP.CEPInfo
-  alias ViaCEP.Behaviour
+  alias Tesla.Env, as: Response
+  alias ViaCEP.{Behaviour, CEPInfo}
 
   @behaviour Behaviour
 

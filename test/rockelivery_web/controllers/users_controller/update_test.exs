@@ -4,9 +4,9 @@ defmodule RockeliveryWeb.UsersController.UpdateTest do
   import Mox
   import Rockelivery.Factory
 
-  alias ViaCEP.ClientMock
   alias Rockelivery.User
   alias RockeliveryWeb.Auth.Guardian
+  alias ViaCEP.ClientMock
 
   describe "update/2" do
     setup %{conn: conn} do

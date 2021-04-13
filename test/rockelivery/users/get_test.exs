@@ -3,8 +3,8 @@ defmodule Rockelivery.Users.GetTest do
 
   import Rockelivery.Factory
 
-  alias Rockelivery.Users.Get
   alias Rockelivery.User
+  alias Rockelivery.Users.Get
 
   describe "by_id/1" do
     test "returns the user if it exists" do
