@@ -279,7 +279,7 @@ Enum:
 - https://hexdocs.pm/bypass/Bypass.html
 - https://hexdocs.pm/mox/Mox.html
 
-### Github Actions
+### CI
 
 - https://github.com/actions
 - https://github.com/actions/starter-workflows
@@ -290,6 +290,7 @@ Enum:
 - https://docs.github.com/en/actions/managing-workflow-runs
 - https://docs.github.com/en/actions/learn-github-actions
 - https://docs.github.com/en/actions
+- https://docs.codecov.io/docs
 
 ## Resources <a name = "resources"></a>
 

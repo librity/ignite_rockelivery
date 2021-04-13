@@ -45,6 +45,16 @@ jobs:
       - name: Run linter
         run: mix credo --strict
 
+      - name: Check coverage
+        run: mix coveralls.json
+        env:
+          MIX_ENV: test
+
+      - name: Upload coverage report
+        run: bash <(curl -s https://codecov.io/bash)
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Install dependencies
         run: mix deps.get
 
