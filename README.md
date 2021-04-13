@@ -1,8 +1,5 @@
 # Rocket Seat Ignite - Rockelivery
 
-[![tests](https://github.com/librity/ignite_rockelivery/actions/workflows/tests.yml/badge.svg)](https://github.com/librity/ignite_rockelivery/actions/workflows/tests.yml)
-[![build](https://github.com/librity/ignite_rockelivery/actions/workflows/build.yml/badge.svg)](https://github.com/librity/ignite_rockelivery/actions/workflows/build.yml)
-
 ## Table of Contents
 
 - [About](#about)
@@ -280,13 +277,24 @@ Enum:
 - https://hexdocs.pm/bypass/Bypass.html
 - https://hexdocs.pm/mox/Mox.html
 
+### Github Actions
+
+- https://github.com/actions
+- https://github.com/actions/starter-workflows
+- https://github.com/actions/starter-workflows/blob/fc65e636f2a8e8dcc0048090ca715cd6b5d76e40/ci/elixir.yml
+- https://github.com/mijailr/actions_sample/blob/master/.github/workflows/elixir.yml
+- https://docs.github.com/en/actions/learn-github-actions/migrating-from-gitlab-cicd-to-github-actions#databases-and-service-containers
+- https://docs.github.com/en/actions/guides
+- https://docs.github.com/en/actions/managing-workflow-runs
+- https://docs.github.com/en/actions/learn-github-actions
+- https://docs.github.com/en/actions
+
 ## Resources <a name = "resources"></a>
 
 - https://www.tutorialspoint.com/elixir/elixir_lists_and_tuples.htm
 - https://elixirforum.com/c/phoenix-forum
 - https://www.formget.com/regular-expression-for-email/
 - https://github.com/parroty/excoveralls/blob/master/.github/workflows/tests.yml
-- https://github.com/mijailr/actions_sample/blob/master/.github/workflows/elixir.yml
 - https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
 - https://stackoverflow.com/questions/31990134/how-to-convert-map-keys-from-strings-to-atoms-in-elixir
 - https://medium.com/@diamondgfx/debugging-phoenix-with-iex-pry-5417256e1d11
@@ -298,3 +306,4 @@ Enum:
 - https://cloudless.studio/model-callbacks-in-phoenix-ecto-and-rails
 - https://stackoverflow.com/questions/16506351/why-use-a-callback-instead-of-a-normal-function-call
 - https://jwt.io/
+- https://stackoverflow.com/questions/9560815/how-to-get-erlangs-release-version-number-from-a-shell

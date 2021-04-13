@@ -23,5 +23,11 @@ config :rockelivery, RockeliveryWeb.Endpoint,
 config :rockelivery, Rockelivery.Users.Create, via_cep_adapter: ViaCEP.ClientMock
 config :rockelivery, Rockelivery.Users.Update, via_cep_adapter: ViaCEP.ClientMock
 
+if System.get_env("GITHUB_ACTIONS") do
+  config :rockelivery, Rockelivery.Repo,
+    username: "postgres",
+    password: "postgres"
+end
+
 # Print only warnings and errors during test
 config :logger, level: :warn
