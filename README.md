@@ -155,6 +155,17 @@ gigalixir account:ssh_keys:add "$(cat ~/.ssh/id_rsa.pub)"
 gigalixir ps:migrate
 ```
 
+### Remote console
+
+`gigalixir ps:remote_console`
+
+```elixir
+System.cmd("whoami", [])
+System.cmd("echo", ["hello"], into: IO.stream(:stdio, :line))
+seed_script = Path.join(["#{:code.priv_dir(:rockelivery)}", "repo", "seeds.exs"])
+Code.eval_file(seed_script)
+```
+
 ## Elixir Commands <a name = "elixir_commands"></a>
 
 ### Users
@@ -237,11 +248,15 @@ false
 > RockeliveryWeb.Auth.Guardian.authenticate(bad_params)
 ```
 
+### Orders
+
 Orders report:
 
 ```elixir
 > Rockelivery.Orders.Report.create()
 ```
+
+### Misc
 
 Tesla HTTP client:
 
@@ -301,6 +316,7 @@ Enum:
 - https://hexdocs.pm/elixir/master/typespecs.html
 - https://hexdocs.pm/elixir/master/GenServer.html
 - https://hexdocs.pm/elixir/master/Supervisor.html
+- https://hexdocs.pm/elixir/System.html#cmd/3
 - https://hexdocs.pm/phoenix/installation.html#content
 - https://github.com/inotify-tools/inotify-tools/wiki
 - https://hexdocs.pm/phoenix/deployment.html
@@ -337,15 +353,20 @@ Enum:
 - https://gigalixir.readthedocs.io/en/latest/modify-app/releases.html#modifying-existing-app-with-elixir-releases
 - https://gigalixir.readthedocs.io/en/latest/tiers-pricing.html
 - https://gigalixir.readthedocs.io/en/latest/deploy.html?highlight=staging#how-to-set-up-a-staging-environment
+- https://gigalixir.readthedocs.io/en/latest/database.html?highlight=seeds#how-to-run-seeds
+- https://github.com/marketplace/actions/gigalixir-action
 
 ## Resources <a name = "resources"></a>
 
+- https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
+- https://stackoverflow.com/questions/31990134/how-to-convert-map-keys-from-strings-to-atoms-in-elixir
+- https://stackoverflow.com/questions/16506351/why-use-a-callback-instead-of-a-normal-function-call
+- https://stackoverflow.com/questions/9560815/how-to-get-erlangs-release-version-number-from-a-shell
+- https://stackoverflow.com/questions/22594988/run-shell-commands-in-elixir
 - https://www.tutorialspoint.com/elixir/elixir_lists_and_tuples.htm
 - https://elixirforum.com/c/phoenix-forum
 - https://www.formget.com/regular-expression-for-email/
 - https://github.com/parroty/excoveralls/blob/master/.github/workflows/tests.yml
-- https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
-- https://stackoverflow.com/questions/31990134/how-to-convert-map-keys-from-strings-to-atoms-in-elixir
 - https://medium.com/@diamondgfx/debugging-phoenix-with-iex-pry-5417256e1d11
 - https://elixirschool.com/en/lessons/ecto/associations/
 - https://viacep.com.br/
@@ -353,6 +374,4 @@ Enum:
 - https://www.bestrandoms.com/random-address-in-br
 - https://dashbit.co/blog/mocks-and-explicit-contracts
 - https://cloudless.studio/model-callbacks-in-phoenix-ecto-and-rails
-- https://stackoverflow.com/questions/16506351/why-use-a-callback-instead-of-a-normal-function-call
 - https://jwt.io/
-- https://stackoverflow.com/questions/9560815/how-to-get-erlangs-release-version-number-from-a-shell

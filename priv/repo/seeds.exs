@@ -12,6 +12,8 @@
 
 alias Rockelivery.{Item, User}
 
+IO.puts("======= Seeding users =======")
+
 user_params = %{
   "name" => "Luisito",
   "age" => 40,
@@ -24,6 +26,8 @@ user_params = %{
 
 {:ok, %User{id: user_id}} = Rockelivery.Users.Create.call(user_params)
 
+IO.puts("======= Seeding items =======")
+
 item_params = %{
   category: :food,
   description: "Bananas",
@@ -32,6 +36,8 @@ item_params = %{
 }
 
 {:ok, %Item{id: item_id}} = Rockelivery.Items.Create.call(item_params)
+
+IO.puts("======= Seeding orders =======")
 
 order_params = %{
   "user_id" => user_id,
@@ -47,3 +53,5 @@ order_params = %{
 }
 
 Rockelivery.Orders.Create.call(order_params)
+
+IO.puts("======= Done =======")
